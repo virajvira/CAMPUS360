@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f5fa">
+  <meta name="description" content="Manage canteen orders and pickup times for Delhi Technical Campus.">
+  <title>Canteen staff — Delhi Technical Campus</title>
+  <link rel="preconnect" href="https://delhitechnicalcampus.ac.in">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js"></script>
+  <script type="module" src="firebase-auth.js"></script>
+</head>
+<body class="portal-page staff-page" data-page="canteen-staff" data-auth-mode="demo">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="portal-header staff-header">
+    <button class="profile-button portal-menu-trigger" id="profile-button" type="button" aria-label="Open staff menu" aria-haspopup="dialog" aria-controls="profile-dialog">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.25"></circle><path d="M5.5 20c.4-3.5 2.8-5.3 6.5-5.3s6.1 1.8 6.5 5.3"></path></svg>
+      <span class="visually-hidden" id="profile-name">Staff</span>
+    </button>
+    <span class="portal-header-title">Staff orders</span>
+  </header>
+  <main id="main" class="portal-main staff-main">
+    <section class="staff-welcome">
+      <p class="eyebrow"><span></span> CAFE YARANA · ORDER DESK</p>
+      <p class="portal-date" id="portal-date"></p>
+      <h1>Order <em>queue.</em></h1>
+      <p>Review incoming orders, set a pickup estimate, and update students when an order is ready.</p>
+      <div class="staff-demo-note"><strong>Demo mode</strong><span>Orders appear here when a student places one in this browser. Keep the student and staff screens open in separate tabs to test.</span></div>
+    </section>
+    <section class="staff-queue-section" aria-labelledby="staff-queue-title">
+      <div class="staff-queue-heading">
+        <div><p class="eyebrow"><span></span> LIVE QUEUE</p><h2 id="staff-queue-title">Incoming <em>orders.</em></h2></div>
+        <span class="staff-queue-count" id="staff-queue-count">0 active</span>
+      </div>
+      <div class="staff-order-list" id="staff-orders" aria-live="polite">
+        <p class="staff-queue-empty">No orders yet. New student orders will show here.</p>
+      </div>
+      <p class="staff-data-note" id="staff-data-note" role="status">Demo data is stored locally in this browser; it is not shared across devices.</p>
+    </section>
+  </main>
+
+  <dialog class="profile-dialog profile-drawer" id="profile-dialog" aria-labelledby="profile-title">
+    <button class="dialog-close" id="profile-close" type="button" aria-label="Close profile">×</button>
+    <div class="dialog-avatar" id="dialog-avatar">C</div>
+    <p class="eyebrow"><span></span> STAFF MENU</p>
+    <h2 id="profile-title">Hey, <em id="dialog-name">staff.</em></h2>
+    <p class="dialog-role" id="dialog-role">Canteen staff · Delhi Technical Campus</p>
+    <nav class="profile-drawer-links" aria-label="Staff menu">
+      <a href="#staff-orders">Order queue <span aria-hidden="true">›</span></a>
+      <a href="#drawer-profile-details">Profile <span aria-hidden="true">›</span></a>
+    </nav>
+    <div class="profile-details" id="drawer-profile-details"><span>YOUR CAMPUS</span><strong>Delhi Technical Campus</strong><span>ACCESS</span><strong id="dialog-access">Canteen staff dashboard</strong><span id="dialog-email-label" hidden>COLLEGE EMAIL</span><strong id="dialog-email" hidden></strong></div>
+    <button class="sign-out-button" id="sign-out" type="button">Sign out <span aria-hidden="true">↗</span></button>
+  </dialog>
+</body>
+</html>

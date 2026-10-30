@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="Sign in to your Delhi Technical Campus hub.">
+  <title>signin </title>
+  <link rel="preconnect" href="https://delhitechnicalcampus.ac.in">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js"></script>
+  <script type="module" src="firebase-auth.js"></script>
+</head>
+
+<body class="login-page" data-page="login" data-auth-mode="demo">
+  <header class="login-header">
+    <a class="brand dtc-brand login-brand" href="index.html" aria-label="Delhi Technical Campus home">
+      <img class="dtc-seal" src="assets/dtc-logo.png" alt="">
+      <span class="dtc-brand-name">DELHI TECHNICAL CAMPUS</span>
+    </a>
+    <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Welcome</a>
+  </header>
+  <main class="login-layout">
+    <section class="login-form-side">
+      <div class="login-card">
+        <p class="eyebrow"><span></span> YOUR CAMPUS IS WAITING</p>
+        <h1>SIGN IN<br><em>TO CAMPUS 360</em></h1>
+        <p class="login-intro">Choose your campus role, then verify your college email and phone.</p>
+        <form id="login-form" novalidate>
+          <div class="login-fields" id="login-fields">
+            <fieldset class="demo-role-picker">
+              <legend>Your campus role</legend>
+              <label><input type="radio" name="role" value="student" checked>CAMPUS STUDENT</label>
+              <label><input type="radio" name="role" value="staff"> CANTEEN STAFF</label>
+            </fieldset>
+            <label for="college-email">COLLEGE E-MAIL</label>
+            <input id="college-email" name="email" type="email" placeholder="student@dtc.edu.in" autocomplete="email"
+              required>
+            <label for="mobile-number">PHONE NUMBER</label>
+            <div class="phone-input-group">
+              <span class="phone-country-code" aria-label="India country code">+91</span>
+              <input id="mobile-number" name="mobile" type="tel" placeholder="99999 99991" autocomplete="tel-national"
+                inputmode="numeric" maxlength="16" title="Enter a 10-digit Indian mobile number" required>
+            </div>
+            <p class="login-field-note">Demo accounts only. No email or SMS is sent.</p>
+            <button class="button button-dark login-submit" id="send-code" type="submit">GENERATE OTP<span
+                aria-hidden="true">→</span></button>
+            <div class="demo-account-note">
+              <strong>Try the demo</strong>
+              <span>CAMPUS STUDENT: student@dtc.edu.in · 99999 99991</span>
+              <span>CANTEEN STAFF: canteen@dtc.edu.in · 99999 99992</span>
+            </div>
+          </div>
+          <div class="otp-fields" id="otp-fields" hidden>
+            <p class="otp-sent">Demo verification for <strong id="masked-mobile"></strong></p>
+            <label for="otp-code">6-digit demo OTP</label>
+            <input id="otp-code" name="otp" type="text" inputmode="numeric" autocomplete="one-time-code"
+              pattern="[0-9]{6}" maxlength="6" placeholder="000000" aria-describedby="otp-message" required>
+            <p class="otp-demo-note" id="otp-message" role="status"></p>
+            <button class="button button-dark login-submit" id="verify-code" type="submit">Verify &amp; continue <span
+                aria-hidden="true">→</span></button>
+            <button class="resend-code" id="resend-code" type="button">Generate OTP</button>
+            <button class="resend-code" id="change-phone" type="button">Change role or details</button>
+          </div>
+          <p class="form-error" id="login-error" role="alert" hidden></p>
+        </form>
+        <p class="login-legal">This demo OTP is generated in your browser and is not real identity verification. Demo
+          access and order updates are stored on this device only.</p>
+      </div>
+    </section>
+    <aside class="login-art" aria-hidden="true">
+      <div class="login-art-photo"></div>
+      <div class="login-art-shade"></div>
+      <div class="login-art-copy"><span>DELHI TECHNICAL CAMPUS</span>
+        <p>Your day on campus,<br><em>made easier.</em></p>
+      </div>
+      <span class="login-art-number"></span>
+    </aside>
+  </main>
+</body>
+
+</html>

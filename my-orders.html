@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="View recent Cafe Yarana orders, order history, and demo payment records.">
+  <title>My Orders — Delhi Technical Campus</title>
+  <link rel="preconnect" href="https://delhitechnicalcampus.ac.in">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js"></script>
+  <script type="module" src="firebase-auth.js"></script>
+</head>
+
+<body class="portal-page my-orders-page" data-page="my-orders" data-auth-mode="demo">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="portal-header">
+    <button class="profile-button portal-menu-trigger" id="profile-button" type="button" aria-label="Open profile menu"
+      aria-haspopup="dialog" aria-controls="profile-dialog">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="8" r="3.25"></circle>
+        <path d="M5.5 20c.4-3.5 2.8-5.3 6.5-5.3s6.1 1.8 6.5 5.3"></path>
+      </svg>
+      <span class="visually-hidden" id="profile-name">My profile</span>
+    </button>
+    <span class="portal-header-title">My Orders</span>
+    <nav class="portal-nav" aria-label="Campus pages">
+      <a href="canteen.html" class="portal-nav-link">Canteen</a>
+      <a href="my-orders.html" class="portal-nav-link is-active" aria-current="page">My Orders</a>
+      <a href="clubs.html" class="portal-nav-link">Clubs</a>
+      <a href="lost-found.html" class="portal-nav-link">Lost &amp; found</a>
+    </nav>
+    <div class="portal-actions">
+      <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode"
+        title="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    </div>
+  </header>
+
+  <main id="main" class="portal-main order-history-main">
+    <section class="order-history-welcome" aria-labelledby="order-history-title">
+      <p class="eyebrow"><span></span> YOUR CAFE YARANA ACTIVITY</p>
+      <h1 id="order-history-title">My <em>orders.</em></h1>
+      <p>Keep track of your latest canteen order, pickup token, past orders, and demo payment records.</p>
+    </section>
+
+    <div class="order-history-tabs" role="tablist" aria-label="Order views">
+      <button class="order-history-tab is-active" id="recent-order-tab" type="button" role="tab"
+        aria-selected="true" aria-controls="recent-order-panel" data-order-tab="recent">Recent Order</button>
+      <button class="order-history-tab" id="order-history-tab" type="button" role="tab"
+        aria-selected="false" aria-controls="order-history-panel" data-order-tab="history" tabindex="-1">Order History</button>
+    </div>
+
+    <section class="order-history-panel" id="recent-order-panel" role="tabpanel" aria-labelledby="recent-order-tab">
+      <section class="order-history-section" aria-labelledby="recent-order-title">
+        <div class="canteen-menu-heading">
+          <div>
+            <p class="eyebrow"><span></span> MOST RECENT</p>
+            <h2 id="recent-order-title">Recent <em>order.</em></h2>
+          </div>
+        </div>
+        <div class="order-history-list" id="recent-order" aria-live="polite">
+          <p class="student-orders-empty">Your latest order and pickup token will appear here.</p>
+        </div>
+      </section>
+    </section>
+
+    <section class="order-history-panel" id="order-history-panel" role="tabpanel" aria-labelledby="order-history-tab" hidden>
+      <section class="order-history-section" aria-labelledby="order-list-title">
+        <div class="canteen-menu-heading">
+          <div>
+            <p class="eyebrow"><span></span> ALL YOUR CANTEEN ORDERS</p>
+            <h2 id="order-list-title">Order <em>history.</em></h2>
+          </div>
+        </div>
+        <div class="order-history-list" id="order-history" aria-live="polite">
+          <p class="student-orders-empty">Your canteen orders will appear here.</p>
+        </div>
+        <p class="payment-history-note">Each order includes its payment record. Demo orders are not charged.</p>
+      </section>
+    </section>
+
+    <footer class="portal-footer">
+      <a class="brand dtc-brand" href="campus.html" aria-label="Delhi Technical Campus hub"><img class="dtc-seal"
+          src="assets/dtc-logo.png" alt=""><span class="dtc-brand-name">DELHI TECHNICAL CAMPUS<small>GGSIP
+            UNIVERSITY</small></span></a>
+      <span>Delhi Technical Campus · Greater Noida</span>
+      <a href="mailto:info@delhitechnicalcampus.ac.in">Need a hand? Contact DTC ↗</a>
+    </footer>
+  </main>
+
+  <nav class="student-bottom-nav" aria-label="Student navigation">
+    <a href="campus.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"></path></svg><span>Home</span></a>
+    <a href="canteen.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3v7m3-7v7m-3-3h3m-1.5 3v11M15 3v18m0-18c3 2 4 5 4 9h-4"></path></svg><span>Canteen</span></a>
+    <a href="my-orders.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12a2 2 0 0 1 2 2v16l-4-2-4 2-4-2-4 2V5a2 2 0 0 1 2-2Z"></path><path d="M8 8h8M8 12h8M8 16h4"></path></svg><span>My Orders</span></a>
+    <a href="clubs.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3.2 2.2-5 6-5s6 1.8 6 5M16 5.5a3 3 0 0 1 0 5.8m2 3c2 .7 3 2.3 3 4.7"></path></svg><span>Clubs</span></a>
+    <a href="lost-found.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg><span>Lost &amp; Found</span></a>
+  </nav>
+
+  <dialog class="profile-dialog profile-drawer" id="profile-dialog" aria-labelledby="profile-title">
+    <button class="dialog-close" id="profile-close" type="button" aria-label="Close profile">×</button>
+    <div class="dialog-avatar" id="dialog-avatar">C</div>
+    <p class="eyebrow"><span></span> YOUR CAMPUS MENU</p>
+    <h2 id="profile-title">Hey, <em id="dialog-name">friend.</em></h2>
+    <p class="dialog-role" id="dialog-role">Student · Delhi Technical Campus</p>
+    <nav class="profile-drawer-links" aria-label="Profile menu">
+      <a href="campus.html">Campus hub <span aria-hidden="true">›</span></a>
+      <a href="my-orders.html">My Orders <span aria-hidden="true">›</span></a>
+      <a href="lost-found.html#my-uploads">My Uploads <span aria-hidden="true">›</span></a>
+      <a href="#drawer-profile-details">Profile <span aria-hidden="true">›</span></a>
+    </nav>
+    <div class="profile-details" id="drawer-profile-details"><span>YOUR CAMPUS</span><strong>Delhi Technical
+        Campus</strong><span>ACCESS</span><strong id="dialog-access">Student portal</strong><span
+        id="dialog-email-label" hidden>CONTACT EMAIL</span><strong id="dialog-email" hidden></strong></div>
+    <button class="sign-out-button" id="sign-out" type="button">Sign out <span aria-hidden="true">↗</span></button>
+  </dialog>
+  <div class="toast-message" id="toast-message" role="status" aria-live="polite"></div>
+</body>
+
+</html>

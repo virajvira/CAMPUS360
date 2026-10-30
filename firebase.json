@@ -1,0 +1,20 @@
+{
+  "auth": {
+    "providers": {
+      "emailPassword": true,
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "Delhi Technical Campus",
+        "supportEmail": "info@delhitechnicalcampus.ac.in",
+        "authorizedRedirectUris": [
+          "https://delhi-technical-campus-app.firebaseapp.com/__/auth/handler",
+          "http://localhost:5173",
+          "http://127.0.0.1:5173"
+        ]
+      }
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  }
+}
+

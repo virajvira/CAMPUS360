@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="Your Delhi Technical Campus hub for canteen orders, campus clubs, and lost and found.">
+  <title>Campus Hub — Delhi Technical Campus</title>
+  <link rel="preconnect" href="https://delhitechnicalcampus.ac.in">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js"></script>
+  <script type="module" src="firebase-auth.js"></script>
+</head>
+<body class="portal-page" data-page="portal" data-auth-mode="demo">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="portal-header">
+    <button class="profile-button portal-menu-trigger" id="profile-button" type="button" aria-label="Open profile menu" aria-haspopup="dialog" aria-controls="profile-dialog">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.25"></circle><path d="M5.5 20c.4-3.5 2.8-5.3 6.5-5.3s6.1 1.8 6.5 5.3"></path></svg>
+      <span class="visually-hidden" id="profile-name">My profile</span>
+    </button>
+    <span class="portal-header-title">Campus hub</span>
+    <div class="portal-actions">
+      <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle dark mode"><span aria-hidden="true">◐</span></button>
+    </div>
+  </header>
+  <main id="main" class="portal-main hub-main">
+    <section class="hub-choices" aria-labelledby="hub-title">
+      <p class="eyebrow"><span></span> DELHI TECHNICAL CAMPUS</p>
+      <h1 id="hub-title">Where would you<br>like to <em>go?</em></h1>
+      <div class="hub-choice-grid">
+        <a class="hub-choice-card hub-choice-canteen" href="canteen.html">
+          <span class="hub-choice-number">01 / FOOD &amp; DRINK</span>
+          <span class="hub-choice-title">Canteen <span aria-hidden="true">↗</span></span>
+        </a>
+        <a class="hub-choice-card hub-choice-clubs" href="clubs.html">
+          <span class="hub-choice-number">02 / CAMPUS COMMUNITY</span>
+          <span class="hub-choice-title">Clubs <span aria-hidden="true">↗</span></span>
+        </a>
+        <a class="hub-choice-card hub-choice-lost" href="lost-found.html">
+          <span class="hub-choice-number">03 / CAMPUS SUPPORT</span>
+          <span class="hub-choice-title">Lost &amp; found <span aria-hidden="true">↗</span></span>
+        </a>
+      </div>
+    </section>
+    <section class="campus-updates" aria-labelledby="campus-updates-title">
+      <div class="campus-update-heading">
+        <p class="eyebrow"><span></span> WHAT'S HAPPENING</p>
+        <h2 id="campus-updates-title">Campus <em>updates.</em></h2>
+      </div>
+      <div class="campus-update-grid">
+        <article class="campus-update-card">
+          <span class="campus-update-label">UPCOMING EVENT · DEMO</span>
+          <h3>Campus Connect</h3>
+          <p>Meet student clubs, discover activities, and find your people.</p>
+          <span class="campus-update-date">Add event date and venue when confirmed</span>
+        </article>
+        <article class="campus-update-card campus-announcement">
+          <span class="campus-update-label">CAMPUS ANNOUNCEMENT · DEMO</span>
+          <h3>Welcome to your campus hub</h3>
+          <p>Check here for important campus notices and updates.</p>
+          <span class="campus-update-date">Posted for demonstration</span>
+        </article>
+      </div>
+    </section>
+    <footer class="portal-footer"><a class="brand dtc-brand" href="index.html" aria-label="Delhi Technical Campus"><img class="dtc-seal" src="assets/dtc-logo.png" alt=""><span class="dtc-brand-name">DELHI TECHNICAL CAMPUS<small>GGSIP UNIVERSITY</small></span></a><span>Delhi Technical Campus · Greater Noida</span><a href="mailto:info@delhitechnicalcampus.ac.in">Need a hand? Contact DTC ↗</a></footer>
+  </main>
+
+  <nav class="student-bottom-nav" aria-label="Student navigation">
+    <a href="campus.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"></path></svg><span>Home</span></a>
+    <a href="canteen.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3v7m3-7v7m-3-3h3m-1.5 3v11M15 3v18m0-18c3 2 4 5 4 9h-4"></path></svg><span>Canteen</span></a>
+    <a href="my-orders.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12a2 2 0 0 1 2 2v16l-4-2-4 2-4-2-4 2V5a2 2 0 0 1 2-2Z"></path><path d="M8 8h8M8 12h8M8 16h4"></path></svg><span>My Orders</span></a>
+    <a href="clubs.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3.2 2.2-5 6-5s6 1.8 6 5M16 5.5a3 3 0 0 1 0 5.8m2 3c2 .7 3 2.3 3 4.7"></path></svg><span>Clubs</span></a>
+    <a href="lost-found.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg><span>Lost &amp; Found</span></a>
+  </nav>
+  <dialog class="profile-dialog profile-drawer" id="profile-dialog" aria-labelledby="profile-title">
+    <button class="dialog-close" id="profile-close" type="button" aria-label="Close profile">×</button>
+    <div class="dialog-avatar" id="dialog-avatar">C</div>
+    <p class="eyebrow"><span></span> YOUR CAMPUS MENU</p>
+    <h2 id="profile-title">Hey, <em id="dialog-name">friend.</em></h2>
+    <p class="dialog-role" id="dialog-role">Student · Delhi Technical Campus</p>
+    <nav class="profile-drawer-links" aria-label="Profile menu">
+      <a href="campus.html">Campus hub <span aria-hidden="true">›</span></a>
+      <a href="my-orders.html">My Orders <span aria-hidden="true">›</span></a>
+      <a href="lost-found.html#my-uploads">My Uploads <span aria-hidden="true">›</span></a>
+      <a href="#drawer-profile-details">Profile <span aria-hidden="true">›</span></a>
+    </nav>
+    <div class="profile-details" id="drawer-profile-details"><span>YOUR CAMPUS</span><strong>Delhi Technical Campus</strong><span>ACCESS</span><strong id="dialog-access">Student portal</strong><span id="dialog-email-label" hidden>CONTACT EMAIL</span><strong id="dialog-email" hidden></strong></div>
+    <button class="sign-out-button" id="sign-out" type="button">Sign out <span aria-hidden="true">↗</span></button>
+  </dialog>
+  <div class="toast-message" id="toast-message" role="status" aria-live="polite"></div>
+</body>
+</html>
